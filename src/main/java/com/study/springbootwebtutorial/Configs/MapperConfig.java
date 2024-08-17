@@ -1,2 +1,14 @@
-package com.study.springbootwebtutorial.Configs;public class MapperConfig {
+package com.study.springbootwebtutorial.Configs;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MapperConfig {
+
+    @Bean
+    public ModelMapper getModelMapper(){
+        return new ModelMapper();
+    }
 }

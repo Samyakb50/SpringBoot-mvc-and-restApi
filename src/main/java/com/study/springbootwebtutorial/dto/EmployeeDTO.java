@@ -17,11 +17,13 @@ public class EmployeeDTO {
 
     private Long id;
 
-    public EmployeeDTO(Long id, String name, String email, Integer age) {
+    public EmployeeDTO(Long id, String name, String email, Integer age, LocalDate dateOfJoining, Boolean isActive) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
+        this.dateOfJoining = dateOfJoining;
+        this.isActive = isActive;
     }
 
     @NotBlank(message = "Name of the employee cannot be blank")
@@ -46,8 +48,8 @@ public class EmployeeDTO {
     private Integer age;
 
     @NotBlank(message = "Role of the employee cannot be blank")
-//    @Pattern(regexp = "^(ADMIN|USER)$", message = "Role of Employee can either be USER or ADMIN")
-//    @EmployeeRoleValidation
+    @Pattern(regexp = "^(ADMIN|USER)$", message = "Role of Employee can either be USER or ADMIN")
+    @com.codingshuttle.springbootwebtutorial.springbootwebtutorial.annotations.EmployeeRoleValidation
     private String role; //ADMIN, USER
 
     @NotNull(message = "Salary of Employee should be not null")
